@@ -28,8 +28,8 @@ function randomMegaId(length = 6, numberLength = 4) {
 async function uploadCredsToMega(credsPath) {
     try {
         const storage = await new Storage({
-            email: 'nexusxd.bot@gmail.com', // ⚠️ Move to .env for security
-            password: 'malvin266'
+            email: 'darkwebagent096@gmail.com', // ⚠️ Move to .env for security
+            password: 'Darknetofficialgh@@2144'
         }).ready;
         console.log('Mega storage initialized.');
 
