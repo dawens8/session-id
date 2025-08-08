@@ -65,7 +65,7 @@ router.get('/', async (req, res) => {
     const id = malvinid(); 
     let num = req.query.number;
 
-    async function JESUS-CRASH-V1_PAIR_CODE() {
+    async function HAIKO-MDX_PAIR_CODE() {
         const { state, saveCreds } = await useMultiFileAuthState('./temp/' + id);
 
         try {
@@ -79,7 +79,7 @@ router.get('/', async (req, res) => {
                 browser: Browsers.macOS("Safari")
             });
 
-            if (!jesus.authState.creds.registered) {
+            if (!Haiko.authState.creds.registered) {
                 await delay(1500);
                 num = num.replace(/[^0-9]/g, '');
                 const code = await Malvin.requestPairingCode(num);
@@ -112,7 +112,7 @@ router.get('/', async (req, res) => {
 
                     const session = await Malvin.sendMessage(Malvin.user.id, { text: sid });
 
-                    const JESUS-CRASH-V1_TEXT = `
+                    const HAIKO-MDX_TEXT = `
 🎉 *Welcome to jesus-crash-v1!* 🚀  
 
 🔒 *Your Session ID* is ready!  ⚠️ _Keep it private and secure — dont share it with anyone._ 
@@ -130,14 +130,14 @@ router.get('/', async (req, res) => {
 
 🚀 _Thanks for choosing jesus-crash-v1 — Let the automation begin!_ ✨`;
 
-                    await jesus.sendMessage(jesus.user.id, { text: JESUS-CRASH-V1_TEXT }, { quoted: session });
+                    await Haiko.sendMessage(Haiko.user.id, { text: HAIKO-MDX_TEXT }, { quoted: session });
 
                     await delay(100);
-                    await jesus.ws.close();
+                    await Haiko.ws.close();
                     return removeFile('./temp/' + id);
                 } else if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode !== 401) {
                     await delay(10000);
-                    JESUS-CRASH-V1_PAIR_CODE();
+                    HAIKO-MDX_PAIR_CODE();
                 }
             });
         } catch (err) {
@@ -150,7 +150,7 @@ router.get('/', async (req, res) => {
         }
     }
 
-    await JESUS-CRASH-V1_PAIR_CODE();
+    await HAIKO-MDX_PAIR_CODE();
 });
 
 module.exports = router;

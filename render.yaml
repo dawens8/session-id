@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: JESUS-CRASH-V1
+    name: HAIKO-MDX
     env: docker
     region: Frankfurt
     plan: free

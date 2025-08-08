@@ -1,4 +1,4 @@
-function jesusid(num = 4) {
+function haikoid(num = 4) {
   let result = "";
   let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
   var characters9 = characters.length;

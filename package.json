@@ -1,16 +1,16 @@
 {
-  "description": "JESUS-CRASH-V1",
-  "main": "./jesus-crash-v1.js",
+  "description": "jesus-crash-v1",
+  "main": "./haiko-mdx.js",
   "type": "commonjs",
   "engines": {
     "node": ">=20.0.0"
   },
   "scripts": {
-    "start": "pm2 start jesus-crash-v1.js --deep-monitoring --attach --name jesus-crash-v1",
-    "stop": "pm2 stop jesus-crash-v1",
-    "restart": "pm2 restart jesus-crash-v1"
+    "start": "pm2 start haiko-mdx.js --deep-monitoring --attach --name haiko-mdx",
+    "stop": "pm2 stop haiko-mdx",
+    "restart": "pm2 restart haiko-mdx"
   },
-  "author": "DAWENS TECH",
+  "author": "DAWENS BOY",
   "license": "GPL-3.0 license",
   "dependencies": {
     "@whiskeysockets/baileys": "^6.6.7",
