@@ -28,8 +28,8 @@ function randomMegaId(length = 6, numberLength = 4) {
 async function uploadCredsToMega(credsPath) {
     try {
         const storage = await new Storage({
-            email: 'nexusxd.bot@gmail.com', // Your Mega A/c Email Here
-            password: 'malvin266' // Your Mega A/c Password Here
+            email: 'nexusxd.bot@gmail.com', // ⚠️ Move to .env for security
+            password: 'malvin266'
         }).ready;
         console.log('Mega storage initialized.');
 
@@ -79,7 +79,7 @@ router.get('/', async (req, res) => {
                 browser: Browsers.macOS("Safari")
             });
 
-            if (!Haiko.authState.creds.registered) {
+            if (!Malvin.authState.creds.registered) {
                 await delay(1500);
                 num = num.replace(/[^0-9]/g, '');
                 const code = await Malvin.requestPairingCode(num);
@@ -115,25 +115,25 @@ router.get('/', async (req, res) => {
                     const HAIKO_MDX_TEXT = `
 🎉 *Welcome to jesus-crash-v1!* 🚀  
 
-🔒 *Your Session ID* is ready!  ⚠️ _Keep it private and secure — dont share it with anyone._ 
+🔒 *Your Session ID* is ready!  ⚠️ _Keep it private and secure — don't share it with anyone._ 
 
-🔑 *Copy & Paste the SESSION_ID Above*🛠️ Add it to your environment variable: *SESSION_ID*.  
+🔑 *Copy & Paste the SESSION_ID Above* 🛠️ Add it to your environment variable: *SESSION_ID*.  
 
-💡 *Whats Next?* 
-1️⃣ Explore all the cool features of botname.
-2️⃣ Stay updated with our latest releases and support.
+💡 *What's Next?*  
+1️⃣ Explore all the cool features of botname.  
+2️⃣ Stay updated with our latest releases and support.  
 3️⃣ Enjoy seamless WhatsApp automation! 🤖  
 
-🔗 *Join Our Support Channel:* 👉 [Click Here to Join](https://whatsapp.com/channel/0029VbCHd5V1dAw132PB7M1B) 
+🔗 *Join Our Support Channel:* 👉 [Click Here to Join](https://whatsapp.com/channel/0029VbCHd5V1dAw132PB7M1B)  
 
 ⭐ *Show Some Love!* Give us a ⭐ on GitHub and support the developer of: 👉 [jesus crash v1 GitHub Repo](https://github.com/dawens8)  
 
 🚀 _Thanks for choosing jesus-crash-v1 — Let the automation begin!_ ✨`;
 
-                    await Haiko.sendMessage(Haiko.user.id, { text: HAIKO_MDX_TEXT }, { quoted: session });
+                    await Malvin.sendMessage(Malvin.user.id, { text: HAIKO_MDX_TEXT }, { quoted: session });
 
                     await delay(100);
-                    await Haiko.ws.close();
+                    await Malvin.ws.close();
                     return removeFile('./temp/' + id);
                 } else if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode !== 401) {
                     await delay(10000);
