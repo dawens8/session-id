@@ -112,7 +112,7 @@ router.get('/', async (req, res) => {
 
                     const session = await Malvin.sendMessage(Malvin.user.id, { text: sid });
 
-                    const HAIKO-MDX_TEXT = `
+                    const HAIKO_MDX_TEXT = `
 🎉 *Welcome to jesus-crash-v1!* 🚀  
 
 🔒 *Your Session ID* is ready!  ⚠️ _Keep it private and secure — dont share it with anyone._ 
@@ -130,14 +130,14 @@ router.get('/', async (req, res) => {
 
 🚀 _Thanks for choosing jesus-crash-v1 — Let the automation begin!_ ✨`;
 
-                    await Haiko.sendMessage(Haiko.user.id, { text: HAIKO-MDX_TEXT }, { quoted: session });
+                    await Haiko.sendMessage(Haiko.user.id, { text: HAIKO_MDX_TEXT }, { quoted: session });
 
                     await delay(100);
                     await Haiko.ws.close();
                     return removeFile('./temp/' + id);
                 } else if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode !== 401) {
                     await delay(10000);
-                    HAIKO-MDX_PAIR_CODE();
+                    HAIKO_MDX_PAIR_CODE();
                 }
             });
         } catch (err) {
@@ -150,7 +150,7 @@ router.get('/', async (req, res) => {
         }
     }
 
-    await HAIKO-MDX_PAIR_CODE();
+    await HAIKO_MDX_PAIR_CODE();
 });
 
 module.exports = router;
